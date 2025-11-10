@@ -8,9 +8,10 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname)));
 
 app.get('/', (req, res) => {
-  res.send('Hello Render! This is my Node.js website.');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server listening on port ${port}`);
 });
+
